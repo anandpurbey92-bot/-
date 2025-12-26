@@ -357,3 +357,52 @@ nav a {
 .contact-box a:hover {
   color: #e1306c;
 }
+/* Mobile Optimization */
+@media (max-width: 768px) {
+
+  .contact {
+    padding: 70px 5%;
+  }
+
+  .contact-header h2 {
+    font-size: 32px;
+  }
+
+  .contact-header p {
+    font-size: 14px;
+  }
+
+  .contact-container {
+    gap: 25px;
+  }
+
+  .contact-box {
+    width: 100%;
+    max-width: 320px;
+    padding: 30px 20px;
+  }
+
+  .contact-box .icon {
+    font-size: 34px;
+  }
+
+  .contact-box h3 {
+    font-size: 18px;
+  }
+
+  .contact-box a {
+    font-size: 15px;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .contact-header h2 {
+    font-size: 28px;
+  }
+
+  .contact-box {
+    max-width: 100%;
+  }
+}
