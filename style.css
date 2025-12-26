@@ -8,9 +8,10 @@
 body {
   background: #fff;
   color: #222;
+  overflow-x: hidden;
 }
 
-/* Navbar */
+/* ---------------- NAVBAR ---------------- */
 .navbar {
   position: fixed;
   top: 0;
@@ -18,42 +19,74 @@ body {
   background: white;
   display: flex;
   justify-content: space-between;
-  padding: 15px 8%;
+  align-items: center;
+  padding: 14px 6%;
   z-index: 100;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
+  text-decoration: none;
+  color: #000;
 }
 
 .logo span {
   color: #c9a14a;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav a {
-  margin-left: 25px;
+  margin-left: 22px;
   text-decoration: none;
   color: #333;
   font-weight: 500;
 }
 
-/* Hero */
+/* Order Button */
+.order-btn {
+  margin-left: 26px;
+  padding: 10px 22px;
+  background: #25D366;
+  color: #fff !important;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.order-btn:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* ---------------- HERO ---------------- */
 .hero {
-  height: 100vh;
+  min-height: 100svh; /* mobile safe viewport */
   position: relative;
   overflow: hidden;
 }
 
-.slides {
+.slides,
+.slide {
   position: absolute;
   inset: 0;
 }
 
 .slide {
-  position: absolute;
-  inset: 0;
   background-size: cover;
   background-position: center;
   opacity: 0;
@@ -72,97 +105,97 @@ nav a {
 }
 
 .hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
+  position: relative;
   z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 0 6%;
 }
 
 .hero-content h1 {
-  font-size: 50px;
+  font-size: clamp(32px, 6vw, 50px);
 }
 
-.hero-content button {
-  margin-top: 20px;
+.hero-content p {
+  margin-top: 10px;
+  font-size: clamp(16px, 3vw, 20px);
+}
+
+.hero-content a {
+  margin-top: 22px;
   padding: 12px 30px;
   background: #c9a14a;
-  border: none;
-  color: white;
-  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
 }
 
-/* Speciality */
+/* ---------------- COMMON SECTIONS ---------------- */
+section {
+  padding: 90px 6%;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 70px 5%;
+  }
+}
+
+/* ---------------- SPECIALITY ---------------- */
 .speciality {
-  padding: 100px 8%;
   text-align: center;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
   margin-top: 50px;
 }
 
 .card {
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .card img {
   width: 100%;
-  height: 300px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
 .card h3 {
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  font-size: 26px;
-}
-/* About Section */
-.about {
-  padding: 100px 8%;
-  background: #fff;
+  font-size: 22px;
 }
 
+/* ---------------- ABOUT ---------------- */
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 50px;
   align-items: center;
 }
 
-.section-tag {
-  color: #c9a14a;
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
 .about-text h2 {
-  font-size: 42px;
-  margin: 10px 0;
+  font-size: clamp(32px, 6vw, 42px);
   font-family: 'Georgia', serif;
-}
-
-.divider {
-  width: 60px;
-  height: 2px;
-  background: #c9a14a;
-  margin: 15px 0 30px;
 }
 
 .about-text p {
   color: #666;
   line-height: 1.8;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   font-size: 16px;
 }
 
@@ -172,7 +205,6 @@ nav a {
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .about-container {
     grid-template-columns: 1fr;
@@ -183,44 +215,24 @@ nav a {
     margin: 15px auto 30px;
   }
 }
-.order-btn {
-  margin-left: 30px;
-  padding: 10px 22px;
-  background: #25D366; /* WhatsApp Green */
-  color: #fff !important;
-  border-radius: 25px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
 
-.order-btn:hover {
-  background: #1ebe5d;
-  transform: translateY(-2px);
-}
-/* Menu Images Section */
-.menu-images {
-  padding: 100px 8%;
-  background: #fff;
-  text-align: center;
-}
-
+/* ---------------- MENU IMAGES ---------------- */
 .menu-image-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 35px;
   margin-top: 50px;
 }
 
 .menu-image-card {
-  overflow: hidden;
   border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .menu-image-card img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
@@ -229,59 +241,34 @@ nav a {
   transform: scale(1.08);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .menu-image-container {
     grid-template-columns: 1fr;
   }
 }
-/* Gallery Section */
+
+/* ---------------- GALLERY ---------------- */
 .gallery {
-  padding: 100px 8%;
   background: #fafafa;
-  text-align: center;
 }
 
-.gallery-header {
-  margin-bottom: 60px;
-}
-
-.gallery-header h2 {
-  font-size: 42px;
-  font-family: 'Georgia', serif;
-}
-
-.gallery-header p {
-  color: #777;
-  margin-top: 10px;
-}
-
-/* Grid */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
 
-.gallery-item {
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
-
 .gallery-item img {
   width: 100%;
-  height: 260px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: 0.5s;
 }
 
-/* Hover Effect */
 .gallery-item:hover img {
   transform: scale(1.1);
 }
 
-/* Responsive */
 @media (max-width: 992px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -292,128 +279,30 @@ nav a {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
-
-  .gallery-header h2 {
-    font-size: 34px;
-  }
-}
-/* Contact Section */
-.contact {
-  padding: 100px 8%;
-  background: #fff;
-  text-align: center;
 }
 
-.contact-header {
-  margin-bottom: 60px;
-}
-
-.contact-header h2 {
-  font-size: 42px;
-  font-family: 'Georgia', serif;
-}
-
-.contact-header p {
-  color: #777;
-  margin-top: 10px;
-}
-
+/* ---------------- CONTACT ---------------- */
 .contact-container {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
 .contact-box {
   background: #fafafa;
-  padding: 40px 30px;
+  padding: 35px 25px;
   width: 260px;
   border-radius: 10px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .contact-box:hover {
   transform: translateY(-6px);
 }
 
-.contact-box .icon {
-  font-size: 38px;
-  margin-bottom: 15px;
-}
-
-.contact-box h3 {
-  margin-bottom: 10px;
-}
-
-.contact-box a {
-  text-decoration: none;
-  color: #c9a14a;
-  font-weight: 600;
-}
-
-/* Instagram hover color */
-.contact-box a:hover {
-  color: #e1306c;
-}
-/* Mobile Optimization */
-@media (max-width: 768px) {
-
-  .contact {
-    padding: 70px 5%;
-  }
-
-  .contact-header h2 {
-    font-size: 32px;
-  }
-
-  .contact-header p {
-    font-size: 14px;
-  }
-
-  .contact-container {
-    gap: 25px;
-  }
-
-  .contact-box {
-    width: 100%;
-    max-width: 320px;
-    padding: 30px 20px;
-  }
-
-  .contact-box .icon {
-    font-size: 34px;
-  }
-
-  .contact-box h3 {
-    font-size: 18px;
-  }
-
-  .contact-box a {
-    font-size: 15px;
-    word-break: break-word;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .contact-header h2 {
-    font-size: 28px;
-  }
-
-  .contact-box {
-    max-width: 100%;
-  }
-}
-/* Hamburger Icon */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* Mobile Navbar */
+/* ---------------- MOBILE NAV ---------------- */
 @media (max-width: 768px) {
 
   .menu-toggle {
@@ -427,11 +316,9 @@ nav a {
     width: 100%;
     background: #fff;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    gap: 18px;
     padding: 20px 0;
     display: none;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   }
 
   nav.active {
@@ -440,6 +327,7 @@ nav a {
 
   nav a {
     font-size: 18px;
+    margin: 0;
   }
 
   .order-btn {

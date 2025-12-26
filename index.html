@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <title>ShreeNiwasm</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Mobile Optimization -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
@@ -14,14 +16,14 @@
 
 <!-- Navbar -->
 <header class="navbar">
-  <div class="logo">
+  <a href="#home" class="logo">
     श्री <span>निवासन</span>
-  </div>
+  </a>
 
   <!-- Hamburger -->
-  <div class="menu-toggle" id="menuToggle">
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
     ☰
-  </div>
+  </button>
 
   <nav id="navMenu">
     <a href="#home">Home</a>
@@ -40,10 +42,8 @@
   </nav>
 </header>
 
-
-
 <!-- Hero Slider -->
-<section class="hero">
+<section class="hero" id="home">
   <div class="slides">
     <div class="slide active" style="background-image:url('Main.png')"></div>
     <div class="slide" style="background-image:url('Main1.png')"></div>
@@ -53,7 +53,7 @@
   <div class="hero-content" data-aos="fade-up">
     <h1>Eat Good, Feel Good</h1>
     <p>A Taste of Authentic India</p>
-    <button>View Menu</button>
+    <a href="#menu" class="hero-btn">View Menu</a>
   </div>
 </section>
 
@@ -63,23 +63,23 @@
 
   <div class="cards">
     <div class="card" data-aos="zoom-in">
-      <img src="dosa.png">
-      <h3>SouthIndian</h3>
+      <img src="dosa.png" alt="South Indian Food" loading="lazy">
+      <h3>South Indian</h3>
     </div>
 
     <div class="card" data-aos="zoom-in" data-aos-delay="150">
-      <img src="food.png">
+      <img src="food.png" alt="Indian Food" loading="lazy">
       <h3>Indian</h3>
     </div>
 
     <div class="card" data-aos="zoom-in" data-aos-delay="300">
-      <img src="hakka.png">
+      <img src="hakka.png" alt="Chinese Food" loading="lazy">
       <h3>Chinese</h3>
     </div>
   </div>
 </section>
 
-<!-- About Section -->
+<!-- About -->
 <section class="about" id="about">
   <div class="about-container">
 
@@ -88,33 +88,19 @@
       <h2>श्रीनिवासन</h2>
       <div class="divider"></div>
 
-      <p>
-        India Restaurant has been serving delightful culinary experiences for
-        over four decades. Our passion lies in blending authentic flavors with
-        traditional recipes, creating dishes that leave a lasting impression.
-      </p>
-
-      <p>
-        From rich Mughlai delicacies to classic Indian favorites and flavorful
-        Chinese cuisine, we offer a diverse menu crafted with the finest
-        ingredients and utmost care.
-      </p>
-
-      <p>
-        Known for our warm hospitality and inviting ambiance, we strive to make
-        every visit memorable — whether it’s a family gathering, celebration,
-        or a quiet dinner.
-      </p>
+      <p>India Restaurant has been serving delightful culinary experiences for over four decades.</p>
+      <p>From rich Mughlai delicacies to classic Indian favorites and flavorful Chinese cuisine.</p>
+      <p>Known for our warm hospitality and inviting ambiance.</p>
     </div>
 
     <div class="about-image" data-aos="fade-left">
-      <img src="Main.png" alt="India Restaurant Interior">
+      <img src="Main.png" alt="Restaurant Interior" loading="lazy">
     </div>
 
   </div>
 </section>
 
-<!-- Menu Images Section -->
+<!-- Menu Images -->
 <section class="menu-images" id="menu">
   <div class="menu-header" data-aos="fade-up">
     <span class="section-tag">Our Menu</span>
@@ -124,20 +110,17 @@
   </div>
 
   <div class="menu-image-container">
-
     <div class="menu-image-card" data-aos="zoom-in">
-      <img src="menu1.png" alt="Menu Image 1">
+      <img src="menu1.png" alt="Menu Page 1" loading="lazy">
     </div>
 
     <div class="menu-image-card" data-aos="zoom-in" data-aos-delay="200">
-      <img src="menu.png" alt="Menu Image 2">
+      <img src="menu.png" alt="Menu Page 2" loading="lazy">
     </div>
-
   </div>
-
 </section>
 
-<!-- Gallery Section -->
+<!-- Gallery -->
 <section class="gallery" id="gallery">
   <div class="gallery-header" data-aos="fade-up">
     <span class="section-tag">Gallery</span>
@@ -147,36 +130,16 @@
   </div>
 
   <div class="gallery-grid">
-
-    <div class="gallery-item" data-aos="zoom-in">
-      <img src="Chaat.png" alt="Gallery Image 1">
-    </div>
-
-    <div class="gallery-item" data-aos="zoom-in">
-      <img src="cusine.png" alt="Gallery Image 2">
-    </div>
-
-    <div class="gallery-item" data-aos="zoom-in">
-      <img src="dosa.png" alt="Gallery Image 3">
-    </div>
-
-    <div class="gallery-item" data-aos="zoom-in">
-      <img src="dosa1.png" alt="Gallery Image 4">
-    </div>
-
-    <div class="gallery-item" data-aos="zoom-in">
-      <img src="food.png" alt="Gallery Image 5">
-    </div>
-
-    <div class="gallery-item" data-aos="zoom-in">
-      <img src="hakka.png" alt="Gallery Image 6">
-    </div>
-
+    <div class="gallery-item"><img src="Chaat.png" alt="Chaat" loading="lazy"></div>
+    <div class="gallery-item"><img src="cusine.png" alt="Cuisine" loading="lazy"></div>
+    <div class="gallery-item"><img src="dosa.png" alt="Dosa" loading="lazy"></div>
+    <div class="gallery-item"><img src="dosa1.png" alt="Masala Dosa" loading="lazy"></div>
+    <div class="gallery-item"><img src="food.png" alt="Indian Dish" loading="lazy"></div>
+    <div class="gallery-item"><img src="hakka.png" alt="Hakka Noodles" loading="lazy"></div>
   </div>
 </section>
 
-
-<!-- Contact Section -->
+<!-- Contact -->
 <section class="contact" id="contact">
   <div class="contact-header" data-aos="fade-up">
     <span class="section-tag">Contact</span>
@@ -186,40 +149,27 @@
   </div>
 
   <div class="contact-container">
-
-    <!-- Phone -->
-    <div class="contact-box" data-aos="zoom-in">
+    <div class="contact-box">
       <div class="icon">📞</div>
       <h3>Phone</h3>
-      <a href="tel:+xxxxxxxxx">+91 xxxx xxxx</a>
+      <a href="tel:+91XXXXXXXXXX">+91 XXXX XXXX</a>
     </div>
 
-    <!-- Email -->
-    <div class="contact-box" data-aos="zoom-in" data-aos-delay="150">
+    <div class="contact-box">
       <div class="icon">✉️</div>
       <h3>Email</h3>
-      <a href="mailto:info@indiarestaurant.com">
-        info@indiarestaurant.com
-      </a>
+      <a href="mailto:info@indiarestaurant.com">info@indiarestaurant.com</a>
     </div>
 
-    <!-- Instagram -->
-    <div class="contact-box" data-aos="zoom-in" data-aos-delay="300">
+    <div class="contact-box">
       <div class="icon">📸</div>
       <h3>Instagram</h3>
-      <a 
-        href="https://www.instagram.com/indiarestaurant"
-        target="_blank"
-      >
+      <a href="https://www.instagram.com/indiarestaurant" target="_blank">
         @indiarestaurant
       </a>
     </div>
-
   </div>
 </section>
-
-
-
 
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
